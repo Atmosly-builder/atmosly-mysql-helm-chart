@@ -1,0 +1,45 @@
+{{- if .Values.restore.enabled }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: restore
+spec:
+  template:
+    spec:
+      affinity: 
+        {{ .Values.restore.affinity | toYaml | nindent 8 }}
+      serviceAccountName: sa-mysql-restore
+      containers:
+      - name: restore-mysqldb
+        image: squareops/mysqldb-restore:v5
+        imagePullPolicy: Always
+        env:
+        - name: MYSQL_HOST
+          value: {{ .Release.Name }}-primary-headless.{{ .Release.Namespace }}.svc.cluster.local
+        - name: MYSQL_USER
+          value: "root"
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}
+              key: mysql-root-password
+        - name: MYSQL_BUCKET_RESTORE_URI
+          valueFrom:
+            secretKeyRef:
+              name: mysql-bucket-uri-restore
+              key: MYSQL_BUCKET_URI
+        - name: RESTORE_FILE_NAME
+          value: {{ .Values.restore.file_name}}
+        - name: RESTORE_FROM
+          value: {{ .Values.restore.bucket_provider_type}}
+        - name: AWS_DEFAULT_REGION
+          value: {{ .Values.restore.aws_default_region}}
+        resources: 
+          {{ .Values.restore.resources | toYaml | nindent 14 }}
+      - name: wait-for-5-mins
+        image: busybox
+        command: ["sleep", "300"]  # 300 seconds = 5 minutes
+      restartPolicy: Never
+  backoffLimit: 4
+{{- end }}

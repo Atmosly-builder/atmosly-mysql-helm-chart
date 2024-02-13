@@ -1,0 +1,50 @@
+{{- if .Values.backup.enabled }}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-mysqldb
+spec:
+  schedule: {{ .Values.backup.cron_for_full_backup |  quote }}
+  concurrencyPolicy: Forbid
+  suspend: false
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          affinity: 
+            {{- toYaml .Values.backup.affinity | nindent 12 }}
+          restartPolicy: OnFailure
+          imagePullSecrets:
+          - name: regcred
+          serviceAccountName: sa-mysql-backup
+          containers:
+          - name: backup-mysqldb
+            image: squareops/mysqldb-backup:v4
+            imagePullPolicy: Always
+            env:
+            - name: MYSQL_HOST
+              value: {{ .Release.Name }}-secondary.{{ .Release.Namespace }}.svc.cluster.local
+            - name: MYSQL_USER
+              value: "root"
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                    name: {{ .Release.Name }}
+                    key: mysql-root-password
+            - name: MYSQL_BUCKET_URI
+              # value: {{ .Values.backup.bucket_uri}}
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-bucket-uri
+                  key: MYSQL_BUCKET_URI
+            - name: BUCKET_PROVIDER
+              value:  "s3"
+            - name: AWS_DEFAULT_REGION
+              value: {{ .Values.backup.aws_default_region }}
+            resources: 
+              {{- toYaml .Values.backup.resources | nindent 14 }}
+{{- end }}
