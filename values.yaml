@@ -1395,8 +1395,7 @@ backup:
   cron_for_full_backup: "*/5 * * * *"
 
 
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::767398031518:role/test-mysq-backup-restore
+  annotations: arn:aws:iam::767398031518:role/test-mysq-backup-restore
 
   auth:
     username: "root"
@@ -1430,8 +1429,7 @@ restore:
   auth:
     username: "root"
 
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::767398031518:role/test-mysq-backup-restore
+  annotations: arn:aws:iam::767398031518:role/test-mysq-backup-restore
 
   bucket_provider_type: "s3"
 
