@@ -67,6 +67,6 @@ entries:
     sources:
     - https://github.com/bitnami/charts/tree/main/bitnami/mysql
     urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.0.tgz
-    version: 9.16.0
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.1.tgz
+    version: 9.16.1
 generated: "2024-02-13T12:02:48.695668108+05:30"
