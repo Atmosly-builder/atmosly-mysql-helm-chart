@@ -31,5 +31,5 @@ maintainers:
   url: https://github.com/bitnami/charts
 name: mysql
 sources:
-- https://github.com/bitnami/charts/tree/main/bitnami/mysql
-version: 9.16.1
+- https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+version: 9.16.0
