@@ -32,4 +32,4 @@ maintainers:
 name: mysql
 sources:
 - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-version: 9.16.4
+version: 9.16.6
