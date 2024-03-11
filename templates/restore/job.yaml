@@ -12,7 +12,7 @@ spec:
       serviceAccountName: sa-mysql-restore
       containers:
       - name: restore-mysqldb
-        image: squareops/mysqldb-restore:v5
+        image: {{ .Values.restore.image }}
         imagePullPolicy: Always
         env:
         - name: MYSQL_HOST
@@ -24,6 +24,8 @@ spec:
             secretKeyRef:
               name: {{ .Release.Name }}
               key: mysql-root-password
+        - name: MYSQL_NON_ROOT_USER
+          value: {{ .Values.auth.username }}
         - name: MYSQL_BUCKET_RESTORE_URI
           valueFrom:
             secretKeyRef:

@@ -1399,6 +1399,7 @@ metrics:
     rules: []
 
 backup:
+  image: squareops/mysqldb-backup:v4
   enabled: true
   bucket_uri: "s3://navneet-test-dump/"
   aws_default_region: "us-east-2"
@@ -1422,6 +1423,7 @@ backup:
       cpu: 100m
   
 restore:
+  image: squareops01/mysqlrestore:v3
   enabled: true
   bucket_uri: "s3://navneet-test-dump/20-ratings.sql"
   file_name: "20-ratings.sql"
