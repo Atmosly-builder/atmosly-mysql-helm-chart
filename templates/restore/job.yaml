@@ -42,9 +42,9 @@ spec:
           value: {{ .Values.restore.aws_default_region }}
         resources: 
           {{ .Values.restore.resources | toYaml | nindent 14 }}
-      - name: wait-for-5-mins
+      - name: wait-for-10-mins
         image: busybox
-        command: ["sleep", "300"]  # 300 seconds = 5 minutes
+        command: ["sleep", "600"]  # 300 seconds = 5 minutes
       restartPolicy: Never
   backoffLimit: 4
 {{- end }}
