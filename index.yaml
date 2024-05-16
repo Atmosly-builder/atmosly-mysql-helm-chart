@@ -6,7 +6,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 2.14.1
-    created: "2024-05-16T15:04:18.07441762+05:30"
+    created: "2024-05-16T16:05:43.391985785+05:30"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: a40d83bb48d1f6102c7c91bf095b120c39661e1dbc6ecf7ad4eaa8a754e5cebf
@@ -26,7 +26,7 @@ entries:
     - https://github.com/bitnami/charts
     type: library
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/charts/common-2.14.1.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/charts/common-2.14.1.tgz
     version: 2.14.1
   mysql:
   - annotations:
@@ -41,7 +41,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:18.067318791+05:30"
+    created: "2024-05-16T16:05:43.382110752+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -67,7 +67,7 @@ entries:
     sources:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.8.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.8.tgz
     version: 9.16.8
   - annotations:
       category: Database
@@ -81,7 +81,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:18.058863879+05:30"
+    created: "2024-05-16T16:05:43.369449534+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -107,7 +107,7 @@ entries:
     sources:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.7.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.7.tgz
     version: 9.16.7
   - annotations:
       category: Database
@@ -121,7 +121,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:18.04920987+05:30"
+    created: "2024-05-16T16:05:43.358215632+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -147,7 +147,7 @@ entries:
     sources:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.6.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.6.tgz
     version: 9.16.6
   - annotations:
       category: Database
@@ -161,7 +161,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:18.040719744+05:30"
+    created: "2024-05-16T16:05:43.346131855+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -187,7 +187,7 @@ entries:
     sources:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.4.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.4.tgz
     version: 9.16.4
   - annotations:
       category: Database
@@ -201,7 +201,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:15.70877616+05:30"
+    created: "2024-05-16T16:05:40.588012792+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -227,7 +227,7 @@ entries:
     sources:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.3.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.3.tgz
     version: 9.16.3
   - annotations:
       category: Database
@@ -241,7 +241,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:15.442745119+05:30"
+    created: "2024-05-16T16:05:40.320534228+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -267,7 +267,7 @@ entries:
     sources:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.2.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.2.tgz
     version: 9.16.2
   - annotations:
       category: Database
@@ -281,7 +281,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:15.344284195+05:30"
+    created: "2024-05-16T16:05:40.221869886+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -307,7 +307,7 @@ entries:
     sources:
     - https://github.com/bitnami/charts/tree/main/bitnami/mysql
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.1.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.1.tgz
     version: 9.16.1
   - annotations:
       category: Database
@@ -321,7 +321,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-05-16T15:04:15.320571618+05:30"
+    created: "2024-05-16T16:05:40.197209843+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -347,6 +347,6 @@ entries:
     sources:
     - https://github.com/bitnami/charts/tree/main/bitnami/mysql
     urls:
-    - https://github.com/Atmosly-builder/atmosly-mysql-helm-chart.git/mysql-9.16.0.tgz
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.0.tgz
     version: 9.16.0
-generated: "2024-05-16T15:04:15.283220056+05:30"
+generated: "2024-05-16T16:05:40.160465809+05:30"
