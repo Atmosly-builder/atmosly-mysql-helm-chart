@@ -4,6 +4,9 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: restore
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:
@@ -32,11 +35,11 @@ spec:
               name: mysql-bucket-uri-restore
               key: MYSQL_BUCKET_URI
         - name: RESTORE_FILE_NAME
-          value: {{ .Values.restore.file_name}}
+          value: {{ .Values.restore.file_name }}
         - name: RESTORE_FROM
-          value: {{ .Values.restore.bucket_provider_type}}
+          value: {{ .Values.restore.bucket_provider_type }}
         - name: AWS_DEFAULT_REGION
-          value: {{ .Values.restore.aws_default_region}}
+          value: {{ .Values.restore.aws_default_region }}
         resources: 
           {{ .Values.restore.resources | toYaml | nindent 14 }}
       - name: wait-for-5-mins
