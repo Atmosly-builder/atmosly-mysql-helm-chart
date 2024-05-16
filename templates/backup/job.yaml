@@ -27,13 +27,13 @@ spec:
             imagePullPolicy: Always
             env:
             - name: MYSQL_HOST
-              value: {{ .Release.Name }}-secondary.{{ .Release.Namespace }}.svc.cluster.local
+              value: {{ include "common.names.fullname" . }}-secondary.{{ .Release.Namespace }}.svc.cluster.local
             - name: MYSQL_USER
               value: "root"
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                    name: {{ .Release.Name }}
+                    name: {{ include "common.names.fullname" . }}
                     key: mysql-root-password
             - name: MYSQL_BUCKET_URI
               # value: {{ .Values.backup.bucket_uri}}
