@@ -16,13 +16,13 @@ spec:
         imagePullPolicy: Always
         env:
         - name: MYSQL_HOST
-          value: {{ .Release.Name }}-primary-headless.{{ .Release.Namespace }}.svc.cluster.local
+          value: {{ include "common.names.fullname" . }}-primary-headless.{{ .Release.Namespace }}.svc.cluster.local
         - name: MYSQL_USER
           value: "root"
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ .Release.Name }}
+              name: {{ include "common.names.fullname" . }}
               key: mysql-root-password
         - name: MYSQL_NON_ROOT_USER
           value: {{ .Values.auth.username }}
