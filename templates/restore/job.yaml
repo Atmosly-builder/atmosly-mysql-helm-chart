@@ -5,8 +5,9 @@ kind: Job
 metadata:
   name: restore
   annotations:
-    argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    "helm.sh/hook": post-install  # Execute after all resources are installed
+    "helm.sh/hook-weight": "5"   # Control the order of hook execution
+    "helm.sh/hook-delete-policy": hook-succeeded  # Delete the job if it succeeds
 spec:
   template:
     spec:
@@ -42,9 +43,9 @@ spec:
           value: {{ .Values.restore.aws_default_region }}
         resources: 
           {{ .Values.restore.resources | toYaml | nindent 14 }}
-      - name: wait-for-10-mins
+      - name: wait-for-5-mins
         image: busybox
-        command: ["sleep", "600"]  # 300 seconds = 5 minutes
+        command: ["sleep", "300"]  # 300 seconds = 5 minutes
       restartPolicy: Never
   backoffLimit: 4
 {{- end }}
