@@ -46,7 +46,7 @@ nameOverride: ""
 fullnameOverride: ""
 ## @param namespaceOverride String to fully override common.names.namespace
 ##
-namespaceOverride: ""
+namespaceOverride: "default"
 ## @param clusterDomain Cluster domain
 ##
 clusterDomain: cluster.local
@@ -464,6 +464,7 @@ primary:
     ## NOTE: When it's set the rest of persistence parameters are ignored
     ##
     existingClaim: ""
+    persistentVolumeReclaimPolicy: Delete
     ## @param primary.persistence.subPath The name of a volume's sub path to mount for persistence
     ##
     subPath: ""
