@@ -25,7 +25,7 @@ global:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: "Infra-Services"
+          - key: "Addons-Services"
             operator: In
             values:
             - "true"
@@ -500,13 +500,13 @@ primary:
   persistentVolumeClaimRetentionPolicy:
     ## @param primary.persistentVolumeClaimRetentionPolicy.enabled Enable Persistent volume retention policy for Primary StatefulSet
     ##
-    enabled: false
+    enabled: true
     ## @param primary.persistentVolumeClaimRetentionPolicy.whenScaled Volume retention behavior when the replica count of the StatefulSet is reduced
     ##
-    whenScaled: Retain
+    whenScaled: Delete
     ## @param primary.persistentVolumeClaimRetentionPolicy.whenDeleted Volume retention behavior that applies when the StatefulSet is deleted
     ##
-    whenDeleted: Retain
+    whenDeleted: Delete
   ## @param primary.extraVolumes Optionally specify extra list of additional volumes to the MySQL Primary pod(s)
   ##
   extraVolumes: []
@@ -915,13 +915,13 @@ secondary:
   persistentVolumeClaimRetentionPolicy:
     ## @param secondary.persistentVolumeClaimRetentionPolicy.enabled Enable Persistent volume retention policy for read only StatefulSet
     ##
-    enabled: false
+    enabled: true
     ## @param secondary.persistentVolumeClaimRetentionPolicy.whenScaled Volume retention behavior when the replica count of the StatefulSet is reduced
     ##
-    whenScaled: Retain
+    whenScaled: Delete
     ## @param secondary.persistentVolumeClaimRetentionPolicy.whenDeleted Volume retention behavior that applies when the StatefulSet is deleted
     ##
-    whenDeleted: Retain
+    whenDeleted: Delete
   ## @param secondary.extraVolumes Optionally specify extra list of additional volumes to the MySQL secondary pod(s)
   ##
   extraVolumes: []
