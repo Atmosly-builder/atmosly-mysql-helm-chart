@@ -6,7 +6,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 2.14.1
-    created: "2024-10-17T19:30:46.874796122+05:30"
+    created: "2025-01-17T15:47:13.208703912+05:30"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: a40d83bb48d1f6102c7c91bf095b120c39661e1dbc6ecf7ad4eaa8a754e5cebf
@@ -41,7 +41,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.271800861+05:30"
+    created: "2025-01-17T15:47:13.20743861+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -51,7 +51,47 @@ entries:
     description: MySQL is a fast, reliable, scalable, and easy to use open source
       relational database system. Designed to handle mission-critical, heavy-load
       production applications.
-    digest: 4cd31c1e19f4451c199b2dd39f30e1623dfb29859eecb700812da47ea88faf38
+    digest: b7333ec1d63d55481f8539c0449e14225c6f931a5cfbb0f24cd0b3bb1c180d95
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+    urls:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.16.tgz
+    version: 9.16.16
+  - annotations:
+      category: Database
+      images: |
+        - name: mysql
+          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
+        - name: mysqld-exporter
+          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r91
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 8.0.35
+    created: "2025-01-17T15:47:13.203913904+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: c34b349efb50963910448452bcf5406340093514a3bcdebf5ee93f4e1a015f41
     home: https://bitnami.com
     icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
     keywords:
@@ -69,564 +109,4 @@ entries:
     urls:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.15.tgz
     version: 9.16.15
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.267370293+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: f6e3bf4b3535de90bbe3e64f28d7e99e866b173aa0ff5ef4a8da57f4cb0d8e52
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.14.tgz
-    version: 9.16.14
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.263215522+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 920697b6351659657f28f788d1cbb9d07cb6978a29bb8856b5b80f10d3593253
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.13.tgz
-    version: 9.16.13
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.257886859+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 4fdfbc628b5e12907e18ce030d6b69600118cf2b4d1e8277f02ce0748b113696
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.12.tgz
-    version: 9.16.12
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.251944901+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: eae2d3459006c308bcb1147dd5e23bd95347de3c259412c8de07774fe55d3e9b
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.11.tgz
-    version: 9.16.11
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.247118535+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: a31cbc7e3ef409561e55b784fa119c46f21fcb44dad38d8151bda276ecdf0aaf
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.10.tgz
-    version: 9.16.10
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.87372153+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 8e55a163eb8bb3ca170ba266eb9a21612fa31439e9c33ea125ec5968dc67c643
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.9.tgz
-    version: 9.16.9
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.868697165+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 9b0370f289a0dd935097f57715b6746974bfca3f4b2a1804175d167008d05005
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.8.tgz
-    version: 9.16.8
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.863619501+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 1903f1f9d056874bd2093a43083250d8d55d9495f4d589d4891d4817d741460d
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.7.tgz
-    version: 9.16.7
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.858615736+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 7d1737099f80c75d8c3af07b8a0f49d0fca085678b93a19d972e8c4ccbfbb3c5
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.6.tgz
-    version: 9.16.6
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.852148582+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: c9be5eac4898a2468a52546c993995b4ac40cb95db2d46f061742f5c626e9ba2
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.4.tgz
-    version: 9.16.4
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.362932921+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 554e03dff0caba2d9b31f8e6d3dd4f37e8a5b4f6a88e77e63d85bb691012e19b
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.3.tgz
-    version: 9.16.3
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.300055563+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 103050ad9495cb4425c9a0fd96fbd4b4d83829f75eabca0e6b8f69e2404d07ce
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.2.tgz
-    version: 9.16.2
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.241807372+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: 1dad9b8c36d8c696f1a4eb8a235e5b778758757fe6f3a1545565432e46344350
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://github.com/bitnami/charts/tree/main/bitnami/mysql
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.1.tgz
-    version: 9.16.1
-  - annotations:
-      category: Database
-      images: |
-        - name: mysql
-          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
-        - name: mysqld-exporter
-          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-        - name: os-shell
-          image: docker.io/bitnami/os-shell:11-debian-11-r91
-      licenses: Apache-2.0
-    apiVersion: v2
-    appVersion: 8.0.35
-    created: "2024-10-17T19:30:46.231752443+05:30"
-    dependencies:
-    - name: common
-      repository: oci://registry-1.docker.io/bitnamicharts
-      tags:
-      - bitnami-common
-      version: 2.x.x
-    description: MySQL is a fast, reliable, scalable, and easy to use open source
-      relational database system. Designed to handle mission-critical, heavy-load
-      production applications.
-    digest: cfe553646402b27e2a8a7fa1372581d82b7b4c3ad2c5c921960ff2c59a8db012
-    home: https://bitnami.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
-    keywords:
-    - mysql
-    - database
-    - sql
-    - cluster
-    - high availability
-    maintainers:
-    - name: VMware, Inc.
-      url: https://github.com/bitnami/charts
-    name: mysql
-    sources:
-    - https://github.com/bitnami/charts/tree/main/bitnami/mysql
-    urls:
-    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.0.tgz
-    version: 9.16.0
-generated: "2024-10-17T19:30:46.217509143+05:30"
+generated: "2025-01-17T15:47:13.198408596+05:30"
