@@ -20,7 +20,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: MYSQL_HOST
-          value: {{ include "common.names.fullname" . }}-primary-headless.{{ .Release.Namespace }}.svc.cluster.local
+          value: {{ include "common.names.fullname" . }}-primary.{{ .Release.Namespace }}.svc.cluster.local
         - name: MYSQL_USER
           value: "root"
         - name: MYSQL_PASSWORD

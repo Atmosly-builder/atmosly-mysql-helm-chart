@@ -27,7 +27,7 @@ spec:
             imagePullPolicy: Always
             env:
             - name: MYSQL_HOST
-              value: {{ include "common.names.fullname" . }}-secondary.{{ .Release.Namespace }}.svc.cluster.local
+              value: {{ include "common.names.fullname" . }}-primary.{{ .Release.Namespace }}.svc.cluster.local
             - name: MYSQL_USER
               value: "root"
             - name: MYSQL_PASSWORD
@@ -36,7 +36,6 @@ spec:
                     name: {{ include "common.names.fullname" . }}
                     key: mysql-root-password
             - name: MYSQL_BUCKET_URI
-              # value: {{ .Values.backup.bucket_uri}}
               valueFrom:
                 secretKeyRef:
                   name: mysql-bucket-uri
