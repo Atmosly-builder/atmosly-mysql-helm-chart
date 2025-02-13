@@ -4,10 +4,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: restore
-  annotations:
-    "helm.sh/hook": post-install  # Execute after all resources are installed
-    "helm.sh/hook-weight": "5"   # Control the order of hook execution
-    "helm.sh/hook-delete-policy": hook-succeeded  # Delete the job if it succeeds
 spec:
   template:
     spec:
@@ -35,12 +31,6 @@ spec:
             secretKeyRef:
               name: mysql-bucket-uri-restore
               key: MYSQL_BUCKET_URI
-        - name: RESTORE_FILE_NAME
-          value: {{ .Values.restore.file_name }}
-        - name: RESTORE_FROM
-          value: {{ .Values.restore.bucket_provider_type }}
-        - name: AWS_DEFAULT_REGION
-          value: {{ .Values.restore.aws_default_region }}
         resources: 
           {{ .Values.restore.resources | toYaml | nindent 14 }}
       restartPolicy: Never

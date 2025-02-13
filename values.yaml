@@ -136,10 +136,10 @@ auth:
   ## @param auth.username Name for a custom user to create
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mysql#creating-a-database-user-on-first-run
   ##
-  username: "navneet"
+  username: "user"
   ## @param auth.password Password for the new user. Ignored if existing secret is provided
   ##
-  password: "navneet"
+  password: "password"
   ## @param auth.replicationUser MySQL replication user
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mysql#setting-up-a-replication-cluster
   ##
@@ -174,7 +174,10 @@ auth:
 ##      #!/bin/bash
 ##      echo "Do something."
 ##
-initdbScripts: {}
+initdbScripts:
+  zzz-grant-admin.sql: |
+    GRANT ALL PRIVILEGES ON *.* TO '{{ .Values.auth.username }}'@'%' WITH GRANT OPTION;
+    FLUSH PRIVILEGES;
 ## @param initdbScriptsConfigMap ConfigMap with the initdb scripts (Note: Overrides `initdbScripts`)
 ##
 initdbScriptsConfigMap: ""
@@ -613,7 +616,7 @@ secondary:
   name: secondary
   ## @param secondary.replicaCount Number of MySQL secondary replicas
   ##
-  replicaCount: 1
+  replicaCount: 2
   ## @param secondary.hostAliases Deployment pod host aliases
   ## https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/
   ##
@@ -1402,20 +1405,18 @@ metrics:
     rules: []
 
 backup:
-  image: squareops/mysqldb-backup:v4
+  image: squareops01/self-managed-mysql-backup:v4
   enabled: true
-  bucket_uri: "s3://navneet-test-dump/"
-  aws_default_region: "us-east-2"
+  bucket_uri: "s3://my-backup-dumps-databases"
   cron_for_full_backup: "*/5 * * * *"
 
 
   annotations:
-    aws: arn:aws:iam::767398031518:role/test-mysq-backup-restore
+    aws: arn:aws:iam::767398031518:role/mongo-backup
 
   auth:
     username: "root"
 
-  bucket_provider_type: "s3"
 
   resources:
     requests:
@@ -1426,19 +1427,16 @@ backup:
       cpu: 100m
   
 restore:
-  image: squareops01/mysqlrestore:v3
+  image: squareops01/self-managed-mysql-restore:v1
   enabled: true
-  bucket_uri: "s3://navneet-test-dump/20-ratings.sql"
-  file_name: "20-ratings.sql"
-  aws_default_region: "us-east-2"
+  bucket_uri: "s3://my-backup-dumps-databases/atmosly_db1.sql"   # provide only .sql/.zip file
 
   auth:
     username: "root"
 
   annotations:
-    aws: arn:aws:iam::767398031518:role/test-mysq-restore-restore
+    aws: arn:aws:iam::767398031518:role/mongo-backup
 
-  bucket_provider_type: "s3"
 
   resources:
     requests:
