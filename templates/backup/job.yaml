@@ -40,10 +40,6 @@ spec:
                 secretKeyRef:
                   name: mysql-bucket-uri
                   key: MYSQL_BUCKET_URI
-            - name: BUCKET_PROVIDER
-              value:  "s3"
-            - name: AWS_DEFAULT_REGION
-              value: {{ .Values.backup.aws_default_region }}
             resources: 
               {{- toYaml .Values.backup.resources | nindent 14 }}
 {{- end }}
