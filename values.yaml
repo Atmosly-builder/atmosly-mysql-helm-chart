@@ -1406,7 +1406,7 @@ metrics:
 
 backup:
   image: squareops01/self-managed-mysql-backup:v4
-  enabled: true
+  enabled: false
   bucket_uri: "s3://my-backup-dumps-databases"
   cron_for_full_backup: "*/5 * * * *"
 
@@ -1428,7 +1428,7 @@ backup:
   
 restore:
   image: squareops01/self-managed-mysql-restore:v1
-  enabled: true
+  enabled: false
   bucket_uri: "s3://my-backup-dumps-databases/atmosly_db1.sql"   # provide s3 URL with file name (extension support .zip/.sql)
 
   auth:
