@@ -6,7 +6,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 2.14.1
-    created: "2025-05-23T14:47:49.060335719+05:30"
+    created: "2025-08-14T22:34:23.929830469+05:30"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: a40d83bb48d1f6102c7c91bf095b120c39661e1dbc6ecf7ad4eaa8a754e5cebf
@@ -41,7 +41,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2025-05-23T14:47:49.059292119+05:30"
+    created: "2025-08-14T22:34:23.921910735+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -51,7 +51,7 @@ entries:
     description: MySQL is a fast, reliable, scalable, and easy to use open source
       relational database system. Designed to handle mission-critical, heavy-load
       production applications.
-    digest: 268718b2689c65bf05fc878f2b5109d45de63dff56a2328b3962060ba0bc24cd
+    digest: a138d770a8bb360f48822bda7607bbbb7b0413bcea874388b1bf1c57838854cf
     home: https://bitnami.com
     icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
     keywords:
@@ -81,7 +81,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2025-05-23T14:47:49.056250419+05:30"
+    created: "2025-08-14T22:34:23.911324908+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -121,7 +121,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2025-05-23T14:47:49.05161902+05:30"
+    created: "2025-08-14T22:34:23.901901995+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -161,7 +161,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2025-05-23T14:47:49.04812802+05:30"
+    created: "2025-08-14T22:34:23.889834326+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -201,7 +201,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.0.35
-    created: "2025-05-23T14:47:49.04351752+05:30"
+    created: "2025-08-14T22:34:23.877186722+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -229,4 +229,4 @@ entries:
     urls:
     - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/mysql-9.16.15.tgz
     version: 9.16.15
-generated: "2025-05-23T14:47:49.03906642+05:30"
+generated: "2025-08-14T22:34:23.864627375+05:30"
