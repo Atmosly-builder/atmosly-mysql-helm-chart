@@ -18,7 +18,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: "gp2"
+  storageClass: ""
 
   affinity:
     nodeAffinity:
