@@ -18,6 +18,32 @@ SPDX-License-Identifier: APACHE-2.0
 {{- end -}}
 
 {{/*
+Returns "true" when the MySQL image tag is below 8.4, the last line that has the
+`default_authentication_plugin` server variable (removed in 8.4: the server stops with
+"unknown variable"). Tags that do not start with major.minor (for example "latest") are
+treated as current MySQL, so nothing is returned for them.
+*/}}
+{{- define "mysql.supportsDefaultAuthenticationPlugin" -}}
+{{- $mm := regexFind "^[0-9]+\\.[0-9]+" (toString .Values.image.tag) -}}
+{{- if $mm -}}
+{{- $parts := splitList "." $mm -}}
+{{- $major := atoi (index $parts 0) -}}
+{{- $minor := atoi (index $parts 1) -}}
+{{- if or (lt $major 8) (and (eq $major 8) (lt $minor 4)) -}}true{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Returns "true" on MySQL 8.4 when auth.defaultAuthenticationPlugin is explicitly
+`mysql_native_password`: 8.4 ships that plugin disabled and `mysql_native_password=ON`
+re-enables it. Not available on 9.x, where the plugin was removed.
+*/}}
+{{- define "mysql.enableNativePasswordPlugin" -}}
+{{- $mm := regexFind "^[0-9]+\\.[0-9]+" (toString .Values.image.tag) -}}
+{{- if and $mm (eq $mm "8.4") (eq (toString .Values.auth.defaultAuthenticationPlugin) "mysql_native_password") -}}true{{- end -}}
+{{- end -}}
+
+{{/*
 Return the proper MySQL image name
 */}}
 {{- define "mysql.image" -}}
